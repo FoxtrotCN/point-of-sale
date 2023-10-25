@@ -174,5 +174,34 @@ namespace SistemaVentas.Presentacion
                 chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("¿Realmente deseas eliminar los clientes seleccionados?", "Eliminacion de Cliente", 
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    foreach (DataGridViewRow row in dgvClientes.Rows)
+                    {
+                        if (Convert.ToBoolean(row.Cells["Eliminar"].Value))
+                        {
+                            Cliente cliente = new Cliente();
+                            cliente.Id = Convert.ToInt32(row.Cells["Id"].Value);
+                            if (FCliente.Eliminar(cliente) != 1)
+                            {
+                                MessageBox.Show("El cliente no pudo ser eliminado", "Eliminacion de Cliente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+                    }
+                    frmCliente_Load(null, null);
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
     }
 }

@@ -50,5 +50,15 @@ namespace SistemaVentas.Datos
             return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FCliente_Actualizar", dbParams));
 
         }
+
+        public static int Eliminar(Cliente cliente)
+        {
+            SqlParameter[] dbParams = new SqlParameter[]
+                {
+                    FDBHelper.MakeParam("@Id", SqlDbType.VarChar, 0, cliente.Id)
+                };
+            return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FCliente_Eliminar", dbParams));
+
+        }
     }
 }
