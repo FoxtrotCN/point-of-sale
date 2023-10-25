@@ -121,6 +121,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(405, 22);
             this.txtBuscar.TabIndex = 2;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // cmbBuscar
             // 
@@ -135,6 +136,7 @@
             this.cmbBuscar.Name = "cmbBuscar";
             this.cmbBuscar.Size = new System.Drawing.Size(167, 24);
             this.cmbBuscar.TabIndex = 1;
+            this.cmbBuscar.Text = "Nombre";
             // 
             // groupBox2
             // 

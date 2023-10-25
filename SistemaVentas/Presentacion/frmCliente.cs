@@ -203,5 +203,28 @@ namespace SistemaVentas.Presentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataView dv = new DataView(dt.Copy());
+                dv.RowFilter = cmbBuscar.Text + " Like '" + txtBuscar.Text + "%'";
+
+                dgvClientes.DataSource = dv;
+                if (dv.Count == 0)
+                {
+                    lblDatosNoEncontrados.Visible = true;
+                }
+                else
+                {
+                    lblDatosNoEncontrados.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
     }
 }
