@@ -44,6 +44,7 @@
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
+            this.txtFlag = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
@@ -191,7 +192,6 @@
             // dgvCategorias
             // 
             this.dgvCategorias.AllowUserToAddRows = false;
-            this.dgvCategorias.AllowUserToOrderColumns = true;
             this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar});
@@ -203,6 +203,7 @@
             this.dgvCategorias.TabIndex = 0;
             this.dgvCategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellClick);
             this.dgvCategorias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellContentClick);
+            this.dgvCategorias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellDoubleClick);
             // 
             // Eliminar
             // 
@@ -229,6 +230,16 @@
             this.cmbBuscar.TabIndex = 1;
             this.cmbBuscar.Text = "Descripcion";
             // 
+            // txtFlag
+            // 
+            this.txtFlag.Enabled = false;
+            this.txtFlag.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtFlag.Location = new System.Drawing.Point(431, 5);
+            this.txtFlag.Name = "txtFlag";
+            this.txtFlag.Size = new System.Drawing.Size(40, 20);
+            this.txtFlag.TabIndex = 1;
+            this.txtFlag.Visible = false;
+            // 
             // frmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,6 +247,7 @@
             this.ClientSize = new System.Drawing.Size(1585, 735);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.txtFlag);
             this.Name = "frmCategoria";
             this.Text = "Mantenimiento de Categorias";
             this.Load += new System.EventHandler(this.frmCategoria_Load);
@@ -245,6 +257,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -266,5 +279,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.ComboBox cmbBuscar;
+        private System.Windows.Forms.TextBox txtFlag;
     }
 }
