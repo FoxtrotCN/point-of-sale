@@ -50,10 +50,14 @@
     <Compile Include="Datos\FCategoria.cs" />
     <Compile Include="Datos\FCliente.cs" />
     <Compile Include="Datos\FDBHelper.cs" />
+    <Compile Include="Datos\FDetalleVenta.cs" />
     <Compile Include="Datos\FProducto.cs" />
+    <Compile Include="Datos\FVenta.cs" />
     <Compile Include="Entidades\Categoria.cs" />
     <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\DetalleVenta.cs" />
     <Compile Include="Entidades\Producto.cs" />
+    <Compile Include="Entidades\Venta.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
