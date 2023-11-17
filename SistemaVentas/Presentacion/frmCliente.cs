@@ -226,5 +226,25 @@ namespace SistemaVentas.Presentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
+
+        internal void SetFlag(string band)
+        {
+            txtFlag.Text = band;
+        }
+
+        private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (txtFlag.Text == "1")
+            {
+                FrmVenta frmVentas = FrmVenta.GetInstance();
+                if (dgvClientes.CurrentRow != null)
+                {
+                    frmVentas.SetCliente(dgvClientes.CurrentRow.Cells[1].Value.ToString(),
+                                        dgvClientes.CurrentRow.Cells[2].Value.ToString());
+                    frmVentas.Show();
+                    Close();
+                }
+            }
+        }
     }
 }

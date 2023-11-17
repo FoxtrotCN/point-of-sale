@@ -26,7 +26,7 @@ namespace SistemaVentas.Datos
         {
             SqlParameter[] dbParams = new SqlParameter[]
                 {
-                    FDBHelper.MakeParam("@ClienteId", SqlDbType.Int, 0, venta.Cliente),
+                    FDBHelper.MakeParam("@ClienteId", SqlDbType.Int, 0, venta.Cliente.Id),
                     FDBHelper.MakeParam("@FechaVenta", SqlDbType.Date, 0, venta.FechaVenta),
                     FDBHelper.MakeParam("@NumeroDocumento", SqlDbType.VarChar, 0, venta.NumeroDocumento),
                     FDBHelper.MakeParam("@TipoDocumento", SqlDbType.VarChar, 0, venta.TipoDocumento),
@@ -40,7 +40,7 @@ namespace SistemaVentas.Datos
             SqlParameter[] dbParams = new SqlParameter[]
                 {
                     FDBHelper.MakeParam("@Id", SqlDbType.Int, 0, venta.Id),
-                    FDBHelper.MakeParam("@ClienteId", SqlDbType.Int, 0, venta.Cliente),
+                    FDBHelper.MakeParam("@ClienteId", SqlDbType.Int, 0, venta.Cliente.Id),
                     FDBHelper.MakeParam("@FechaVenta", SqlDbType.Date, 0, venta.FechaVenta),
                     FDBHelper.MakeParam("@NumeroDocumento", SqlDbType.VarChar, 0, venta.NumeroDocumento),
                     FDBHelper.MakeParam("@TipoDocumento", SqlDbType.VarChar, 0, venta.TipoDocumento),
@@ -53,7 +53,7 @@ namespace SistemaVentas.Datos
         {
             SqlParameter[] dbParams = new SqlParameter[]
                 {
-                    FDBHelper.MakeParam("@Id", SqlDbType.VarChar, 0, cliente.Id)
+                    FDBHelper.MakeParam("@Id", SqlDbType.VarChar, 0, venta.Id)
                 };
             return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FVenta_Eliminar", dbParams));
 
