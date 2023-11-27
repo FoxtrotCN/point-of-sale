@@ -52,6 +52,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnQuitarImagen = new System.Windows.Forms.Button();
+            this.btnCambiarImagen = new System.Windows.Forms.Button();
             this.txtFechaDeVencimiento = new System.Windows.Forms.DateTimePicker();
             this.Imagen = new System.Windows.Forms.PictureBox();
             this.btnBuscarCategoria = new System.Windows.Forms.Button();
@@ -59,9 +61,8 @@
             this.txtPrecioVenta = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtCategoriaDescripcion = new System.Windows.Forms.TextBox();
-            this.btnCambiarImagen = new System.Windows.Forms.Button();
-            this.btnQuitarImagen = new System.Windows.Forms.Button();
             this.dialogo = new System.Windows.Forms.OpenFileDialog();
+            this.txtFlag = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -285,6 +286,7 @@
             this.dgvProducto.TabIndex = 0;
             this.dgvProducto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducto_CellClick);
             this.dgvProducto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducto_CellContentClick);
+            this.dgvProducto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducto_CellDoubleClick);
             // 
             // groupBox1
             // 
@@ -347,12 +349,38 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Location = new System.Drawing.Point(12, 30);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(505, 734);
+            this.groupBox2.Size = new System.Drawing.Size(505, 716);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de Producto";
+            // 
+            // btnQuitarImagen
+            // 
+            this.btnQuitarImagen.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnQuitarImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitarImagen.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnQuitarImagen.Location = new System.Drawing.Point(305, 495);
+            this.btnQuitarImagen.Name = "btnQuitarImagen";
+            this.btnQuitarImagen.Size = new System.Drawing.Size(86, 50);
+            this.btnQuitarImagen.TabIndex = 5;
+            this.btnQuitarImagen.Text = "Quitar Imagen";
+            this.btnQuitarImagen.UseVisualStyleBackColor = false;
+            this.btnQuitarImagen.Click += new System.EventHandler(this.btnQuitarImagen_Click);
+            // 
+            // btnCambiarImagen
+            // 
+            this.btnCambiarImagen.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCambiarImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarImagen.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCambiarImagen.Location = new System.Drawing.Point(305, 441);
+            this.btnCambiarImagen.Name = "btnCambiarImagen";
+            this.btnCambiarImagen.Size = new System.Drawing.Size(86, 48);
+            this.btnCambiarImagen.TabIndex = 5;
+            this.btnCambiarImagen.Text = "Cambiar Imagen";
+            this.btnCambiarImagen.UseVisualStyleBackColor = false;
+            this.btnCambiarImagen.Click += new System.EventHandler(this.btnCambiarImagen_Click);
             // 
             // txtFechaDeVencimiento
             // 
@@ -424,35 +452,20 @@
             this.txtCategoriaDescripcion.Size = new System.Drawing.Size(149, 19);
             this.txtCategoriaDescripcion.TabIndex = 1;
             // 
-            // btnCambiarImagen
-            // 
-            this.btnCambiarImagen.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnCambiarImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCambiarImagen.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCambiarImagen.Location = new System.Drawing.Point(305, 441);
-            this.btnCambiarImagen.Name = "btnCambiarImagen";
-            this.btnCambiarImagen.Size = new System.Drawing.Size(86, 48);
-            this.btnCambiarImagen.TabIndex = 5;
-            this.btnCambiarImagen.Text = "Cambiar Imagen";
-            this.btnCambiarImagen.UseVisualStyleBackColor = false;
-            this.btnCambiarImagen.Click += new System.EventHandler(this.btnCambiarImagen_Click);
-            // 
-            // btnQuitarImagen
-            // 
-            this.btnQuitarImagen.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnQuitarImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitarImagen.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnQuitarImagen.Location = new System.Drawing.Point(305, 495);
-            this.btnQuitarImagen.Name = "btnQuitarImagen";
-            this.btnQuitarImagen.Size = new System.Drawing.Size(86, 50);
-            this.btnQuitarImagen.TabIndex = 5;
-            this.btnQuitarImagen.Text = "Quitar Imagen";
-            this.btnQuitarImagen.UseVisualStyleBackColor = false;
-            this.btnQuitarImagen.Click += new System.EventHandler(this.btnQuitarImagen_Click);
-            // 
             // dialogo
             // 
             this.dialogo.FileName = "openFileDialog1";
+            // 
+            // txtFlag
+            // 
+            this.txtFlag.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFlag.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFlag.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtFlag.Location = new System.Drawing.Point(465, 5);
+            this.txtFlag.Name = "txtFlag";
+            this.txtFlag.Size = new System.Drawing.Size(34, 19);
+            this.txtFlag.TabIndex = 1;
+            this.txtFlag.Visible = false;
             // 
             // FrmProducto
             // 
@@ -461,6 +474,7 @@
             this.ClientSize = new System.Drawing.Size(1479, 758);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.txtFlag);
             this.Name = "FrmProducto";
             this.Text = "Mantenimiento De Productos";
             this.Load += new System.EventHandler(this.FrmProducto_Load);
@@ -471,6 +485,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -510,5 +525,6 @@
         private System.Windows.Forms.Button btnQuitarImagen;
         private System.Windows.Forms.Button btnCambiarImagen;
         private System.Windows.Forms.OpenFileDialog dialogo;
+        private System.Windows.Forms.TextBox txtFlag;
     }
 }

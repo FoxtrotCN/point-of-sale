@@ -12,11 +12,11 @@ namespace SistemaVentas.Datos
 {
     public static class FDetalleVenta
     {
-        public static DataSet GetAll()
+        public static DataSet GetAll(int ventaId)
         {
             SqlParameter[] dbParams = new SqlParameter[]
                 {
-
+                    FDBHelper.MakeParam("@VentaId", SqlDbType.Int, 0, ventaId)
                 };
             return FDBHelper.ExecuteDataSet("usp_Data_FDetalleVenta_GetAll", dbParams);
 
@@ -27,16 +27,16 @@ namespace SistemaVentas.Datos
             SqlParameter[] dbParams = new SqlParameter[]
                 {
                     FDBHelper.MakeParam("@VentaId", SqlDbType.Int, 0, detalleVenta.Venta.Id),
-                    FDBHelper.MakeParam("@ProductoId", SqlDbType.Date, 0, detalleVenta.Producto.Id),
-                    FDBHelper.MakeParam("@Cantidad", SqlDbType.VarChar, 0, detalleVenta.Cantidad),
-                    FDBHelper.MakeParam("@PrecioUnitario", SqlDbType.VarChar, 0, detalleVenta.PrecioUnitario),
+                    FDBHelper.MakeParam("@ProductoId", SqlDbType.Int, 0, detalleVenta.Producto.Id),
+                    FDBHelper.MakeParam("@Cantidad", SqlDbType.Decimal, 0, detalleVenta.Cantidad),
+                    FDBHelper.MakeParam("@PrecioUnitario", SqlDbType.Decimal, 0, detalleVenta.PrecioUnitario),
                 };
             return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FDetalleVenta_Insertar", dbParams));
 
         }
 
-        public static int Actualizar(DetalleVenta detalleVenta)
-        {
+      /*  public static int Actualizar(DetalleVenta detalleVenta)
+        { 
             SqlParameter[] dbParams = new SqlParameter[]
                 {
                     FDBHelper.MakeParam("@Id", SqlDbType.Int, 0, detalleVenta.Id),
@@ -47,7 +47,7 @@ namespace SistemaVentas.Datos
                 };
             return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FDetalleVenta_Actualizar", dbParams));
 
-        }
+        }*/
 
         public static int Eliminar(DetalleVenta detalleVenta)
         {
@@ -57,6 +57,28 @@ namespace SistemaVentas.Datos
                 };
             return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FDetalleVenta_Eliminar", dbParams));
 
+        }
+
+        internal static int DisminuirStock(DetalleVenta detventa)
+        {
+            SqlParameter[] dbParams = new SqlParameter[]
+                {
+                    FDBHelper.MakeParam("@ProductoId", SqlDbType.Int, 0, detventa.Producto.Id),
+                    FDBHelper.MakeParam("@Cantidad", SqlDbType.Decimal, 0, detventa.Cantidad)
+
+                };
+            return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FDetalleVenta_DisminuirStock", dbParams));
+        }
+
+        internal static int AumentarStock(DetalleVenta detventa)
+        {
+            SqlParameter[] dbParams = new SqlParameter[]
+                {
+                    FDBHelper.MakeParam("@ProductoId", SqlDbType.Int, 0, detventa.Producto.Id),
+                    FDBHelper.MakeParam("@Cantidad", SqlDbType.Decimal, 0, detventa.Cantidad)
+
+                };
+            return Convert.ToInt32(FDBHelper.ExecuteScalar("usp_Data_FDetalleVenta_AumentarStock", dbParams));
         }
     }
 }

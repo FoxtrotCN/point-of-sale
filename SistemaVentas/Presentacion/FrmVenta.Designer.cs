@@ -29,14 +29,18 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbTipoDoc = new System.Windows.Forms.ComboBox();
+            this.txtFecha = new System.Windows.Forms.DateTimePicker();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.txtNumeroDoc = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtClienteNombre = new System.Windows.Forms.TextBox();
             this.txtClienteId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -47,10 +51,6 @@
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
-            this.txtClienteNombre = new System.Windows.Forms.TextBox();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
-            this.txtFecha = new System.Windows.Forms.DateTimePicker();
-            this.cmbTipoDoc = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
@@ -83,6 +83,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de Venta";
             // 
+            // cmbTipoDoc
+            // 
+            this.cmbTipoDoc.FormattingEnabled = true;
+            this.cmbTipoDoc.Items.AddRange(new object[] {
+            "Boleta",
+            "Factura"});
+            this.cmbTipoDoc.Location = new System.Drawing.Point(186, 300);
+            this.cmbTipoDoc.Name = "cmbTipoDoc";
+            this.cmbTipoDoc.Size = new System.Drawing.Size(201, 24);
+            this.cmbTipoDoc.TabIndex = 4;
+            this.cmbTipoDoc.Text = "Factura";
+            // 
+            // txtFecha
+            // 
+            this.txtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtFecha.Location = new System.Drawing.Point(186, 236);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(200, 22);
+            this.txtFecha.TabIndex = 3;
+            // 
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -106,6 +126,18 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnBuscarCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnBuscarCliente.Location = new System.Drawing.Point(400, 174);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(53, 28);
+            this.btnBuscarCliente.TabIndex = 2;
+            this.btnBuscarCliente.Text = "...";
+            this.btnBuscarCliente.UseVisualStyleBackColor = false;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
             // btnGuardar
             // 
@@ -165,6 +197,15 @@
             this.label3.Size = new System.Drawing.Size(50, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Fecha";
+            // 
+            // txtClienteNombre
+            // 
+            this.txtClienteNombre.Enabled = false;
+            this.txtClienteNombre.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtClienteNombre.Location = new System.Drawing.Point(234, 177);
+            this.txtClienteNombre.Name = "txtClienteNombre";
+            this.txtClienteNombre.Size = new System.Drawing.Size(160, 22);
+            this.txtClienteNombre.TabIndex = 1;
             // 
             // txtClienteId
             // 
@@ -240,6 +281,7 @@
             this.dgvVentas.TabIndex = 0;
             this.dgvVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellClick);
             this.dgvVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellContentClick);
+            this.dgvVentas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellDoubleClick);
             // 
             // Eliminar
             // 
@@ -266,47 +308,6 @@
             this.cmbBuscar.Size = new System.Drawing.Size(167, 24);
             this.cmbBuscar.TabIndex = 1;
             this.cmbBuscar.Text = "Apellido";
-            // 
-            // txtClienteNombre
-            // 
-            this.txtClienteNombre.Enabled = false;
-            this.txtClienteNombre.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtClienteNombre.Location = new System.Drawing.Point(234, 177);
-            this.txtClienteNombre.Name = "txtClienteNombre";
-            this.txtClienteNombre.Size = new System.Drawing.Size(160, 22);
-            this.txtClienteNombre.TabIndex = 1;
-            // 
-            // btnBuscarCliente
-            // 
-            this.btnBuscarCliente.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnBuscarCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(400, 174);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(53, 28);
-            this.btnBuscarCliente.TabIndex = 2;
-            this.btnBuscarCliente.Text = "...";
-            this.btnBuscarCliente.UseVisualStyleBackColor = false;
-            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
-            // 
-            // txtFecha
-            // 
-            this.txtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtFecha.Location = new System.Drawing.Point(186, 236);
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(200, 22);
-            this.txtFecha.TabIndex = 3;
-            // 
-            // cmbTipoDoc
-            // 
-            this.cmbTipoDoc.FormattingEnabled = true;
-            this.cmbTipoDoc.Items.AddRange(new object[] {
-            "Boleta",
-            "Factura"});
-            this.cmbTipoDoc.Location = new System.Drawing.Point(186, 300);
-            this.cmbTipoDoc.Name = "cmbTipoDoc";
-            this.cmbTipoDoc.Size = new System.Drawing.Size(201, 24);
-            this.cmbTipoDoc.TabIndex = 4;
-            this.cmbTipoDoc.Text = "Factura";
             // 
             // FrmVenta
             // 
