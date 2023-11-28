@@ -203,5 +203,12 @@ namespace SistemaVentas.Presentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            ReportesVentas frmReporteVenta= new ReportesVentas();
+            frmReporteVenta.SetVentaId(Convert.ToInt32(txtVentaId.Text));
+            frmReporteVenta.ShowDialog();
+        }
     }
 }

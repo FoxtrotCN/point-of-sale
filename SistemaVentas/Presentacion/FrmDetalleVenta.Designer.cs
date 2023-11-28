@@ -56,6 +56,7 @@
             this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnQuitarProducto = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -64,6 +65,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnImprimir);
             this.groupBox2.Controls.Add(this.txtCantidad);
             this.groupBox2.Controls.Add(this.cmbTipoDoc);
             this.groupBox2.Controls.Add(this.txtFecha);
@@ -155,7 +157,7 @@
             // 
             this.btnAgregarProducto.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAgregarProducto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAgregarProducto.Location = new System.Drawing.Point(132, 512);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(18, 531);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(179, 65);
             this.btnAgregarProducto.TabIndex = 2;
@@ -380,6 +382,16 @@
             this.btnQuitarProducto.UseVisualStyleBackColor = false;
             this.btnQuitarProducto.Click += new System.EventHandler(this.btnQuitarProducto_Click);
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Image = global::SistemaVentas.Properties.Resources.printer1;
+            this.btnImprimir.Location = new System.Drawing.Point(288, 527);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(108, 69);
+            this.btnImprimir.TabIndex = 6;
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // FrmDetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,5 +443,6 @@
         private System.Windows.Forms.DataGridView dgvVentas;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.Button btnQuitarProducto;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }
