@@ -17,7 +17,7 @@ namespace SistemaVentas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(FrmVenta.GetInstance());
+            Application.Run(new FrmLogin());
         }
     }
 }

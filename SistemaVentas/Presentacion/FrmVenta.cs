@@ -47,6 +47,7 @@ namespace SistemaVentas.Presentacion
                     lblDatosNoEncontrados.Visible = true;
                 }
                 MostrarGuardarCancelar(false);
+                lblUsuario.Text = Usuario.Nombre + " " + Usuario.Apellido;
             }
             catch (Exception ex)
             {
@@ -239,6 +240,11 @@ namespace SistemaVentas.Presentacion
 
                 CargarDetalle(venta);
             }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

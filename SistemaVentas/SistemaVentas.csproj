@@ -80,12 +80,14 @@
     <Compile Include="Datos\FCliente.cs" />
     <Compile Include="Datos\FDBHelper.cs" />
     <Compile Include="Datos\FDetalleVenta.cs" />
+    <Compile Include="Datos\FLogin.cs" />
     <Compile Include="Datos\FProducto.cs" />
     <Compile Include="Datos\FVenta.cs" />
     <Compile Include="Entidades\Categoria.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\DetalleVenta.cs" />
     <Compile Include="Entidades\Producto.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Entidades\Venta.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -110,6 +112,12 @@
     </Compile>
     <Compile Include="Presentacion\FrmDetalleVenta.Designer.cs">
       <DependentUpon>FrmDetalleVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\FrmProducto.cs">
       <SubType>Form</SubType>
@@ -143,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmDetalleVenta.resx">
       <DependentUpon>FrmDetalleVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmProducto.resx">
       <DependentUpon>FrmProducto.cs</DependentUpon>
